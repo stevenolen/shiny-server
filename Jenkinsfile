@@ -6,7 +6,8 @@ properties([
                               artifactNumToKeepStr: '',
                               daysToKeepStr: '',
                               numToKeepStr: '100')),
-    parameters([string(name: 'SLACK_CHANNEL', defaultValue: '@steve', description: 'Slack channel to publish build message.')])
+    parameters([string(name: 'SLACK_CHANNEL', defaultValue: '@steve', description: 'Slack channel to publish build message.')
+                ])
 ])
 
 def prepareWorkspace(){ // accessory to clean workspace and checkout
