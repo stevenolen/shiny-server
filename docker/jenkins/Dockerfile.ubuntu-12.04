@@ -11,7 +11,7 @@ RUN set -x \
     && apt-get update
 
 RUN apt-get update \
-  && apt-get install -y make gcc g++ git python libssl-dev cmake r-base sudo wget
+  && apt-get install -y curl make gcc g++ git python libssl-dev cmake r-base sudo wget
 
 WORKDIR /tmp
 RUN curl -fslO https://cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz \
