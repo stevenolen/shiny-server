@@ -5,7 +5,8 @@ properties([
     buildDiscarder(logRotator(artifactDaysToKeepStr: '',
                               artifactNumToKeepStr: '',
                               daysToKeepStr: '',
-                              numToKeepStr: '100'))
+                              numToKeepStr: '100')),
+    parameters([string(name: 'SLACK_CHANNEL', defaultValue: '@steve', description: 'Slack channel to publish build message.')])
 ])
 
 def prepareWorkspace(){ // accessory to clean workspace and checkout
@@ -59,10 +60,10 @@ try {
         }
         parallel parallel_containers
 
-        sendNotifications slack_channel: '@steve'
+        sendNotifications slack_channel: SLACK_CHANNEL
     }
 
 } catch(err) {
-   sendNotifications slack_channel: '@steve'
+   sendNotifications slack_channel: SLACK_CHANNEL
    error("failed: ${err}")
 }
