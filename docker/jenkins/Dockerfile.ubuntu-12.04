@@ -16,7 +16,7 @@ RUN apt-get update \
   && apt-get install -y build-essential curl make gcc-4.8 g++-4.8 git python libssl-dev cmake r-base sudo wget
 
 WORKDIR /tmp
-RUN curl -fslO https://cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz \
+RUN wget https://cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz \
   && tar xzf cmake-2.8.11.2.tar.gz \
   && cd cmake-2.8.11.2 \
   && ./configure \
