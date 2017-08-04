@@ -30,7 +30,7 @@ try {
                 node('docker') {
                     stage('prepare ws/container'){
                       prepareWorkspace()
-                      def image_tag = "${current_container.os}-${current_container.arch}:latest"
+                      def image_tag = "${current_container.os}-${current_container.arch}"
                       container = pullBuildPush(image_name: 'jenkins/shiny-server', dockerfile: "docker/jenkins/Dockerfile.${current_container.os}", image_tag: image_tag, build_arg_jenkins_uid: 'JENKINS_UID', build_arg_jenkins_gid: 'JENKINS_GID')
                     }
                     container.inside() {
