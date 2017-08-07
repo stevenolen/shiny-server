@@ -18,9 +18,9 @@ def prepareWorkspace(){ // accessory to clean workspace and checkout
 try {
     timestamps {
         def containers = [
-          [os: 'ubuntu-12.04', arch: 'x86_64']
+          //[os: 'ubuntu-12.04', arch: 'x86_64']
           //[os: 'centos5.9', arch: 'x86_64'],
-          //[os: 'centos6.3', arch: 'x86_64']
+          [os: 'centos6', arch: 'x86_64']
         ]
         def parallel_containers = [:]
         for (int i = 0; i < containers.size(); i++) {
