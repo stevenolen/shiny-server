@@ -3,7 +3,7 @@ FROM centos:6
 RUN set -x \
     && yum install epel-release -y
 
-RUN yum install -y make gcc gcc-c++ git python openssl-devel rpm-build cmake28 sudo wget R
+RUN yum install -y make gcc gcc-c++ git python openssl-devel rpm-build cmake28 sudo wget R-devel
 
 # install devtools-2 to get gcc 4.8
 RUN wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
