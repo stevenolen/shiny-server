@@ -43,7 +43,7 @@ RUN wget --no-check-certificate -O /etc/pki/tls/certs/ca-bundle.crt https://curl
 # install cmake
 RUN curl -Lk http://www.cmake.org/files/v2.8/cmake-2.8.10.tar.gz | tar xz && cd cmake-2.8.10 && ./configure && make && make install
 
-RUN wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
+RUN wget --no-check-certificate https://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
 RUN yum -y install devtoolset-2-gcc devtoolset-2-binutils
 RUN yum -y install devtoolset-2-gcc-gfortran devtoolset-2-gcc-c++
 
